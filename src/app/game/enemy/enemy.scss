@@ -1,0 +1,28 @@
+.enemy-hp {
+  //TODO: move this into html so we can add value there
+  .death {
+    background-color: black !important;
+    color: white;
+    &:after {
+      content: "D";
+    }
+  }
+  .wound {
+    &:after {
+      content: "W";
+    }
+  }
+  .parry {
+    &:after {
+      content: "P";
+    }
+  }
+  .ready {
+    &:after {
+      content: "R";
+    }
+  }
+  .special-entry {
+    background-color: yellow;
+  }
+}

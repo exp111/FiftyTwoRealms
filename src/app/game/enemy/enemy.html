@@ -1,0 +1,16 @@
+<div class="h-100 border d-flex">
+  <div class="enemy-card flex-grow-1">
+    current enemy
+  </div>
+  <div class="enemy-legend">
+    Legend
+  </div>
+  <div class="enemy-hp d-flex flex-column">
+    @for (entry of hpEntries; track entry) {
+      <div class="border {{getHpEntryTypeName(entry)}}"
+           [class.special-entry]="entry != null">
+        {{ maxHP - $index }}
+      </div>
+    }
+  </div>
+</div>
