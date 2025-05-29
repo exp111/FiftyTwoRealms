@@ -11,18 +11,18 @@ i {
     background-position: center;
   }
   &.club {
-    background-image: url("/img/club.png");
+    background-image: url("../public/img/club.png");
   }
   &.heart {
-    background-image: url("/img/heart.png");
+    background-image: url("../public/img/heart.png");
   }
   &.spade {
-    background-image: url("/img/spade.png");
+    background-image: url("../public/img/spade.png");
   }
   &.diamond {
-    background-image: url("/img/diamond.png");
+    background-image: url("../public/img/diamond.png");
   }
   &.instant {
-    background-image: url("/img/instant.png");
+    background-image: url("../public/img/instant.png");
   }
 }
