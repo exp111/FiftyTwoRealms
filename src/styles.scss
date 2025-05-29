@@ -1,2 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
 @import "bootstrap/scss/bootstrap";
+
+i {
+  &.club,&.heart,&.spade,&.diamond,&.instant {
+    display: inline-block;
+    width: 18px;
+    height: 20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  &.club {
+    background-image: url("/img/club.png");
+  }
+  &.heart {
+    background-image: url("/img/heart.png");
+  }
+  &.spade {
+    background-image: url("/img/spade.png");
+  }
+  &.diamond {
+    background-image: url("/img/diamond.png");
+  }
+  &.instant {
+    background-image: url("/img/instant.png");
+  }
+}
