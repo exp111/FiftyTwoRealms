@@ -77,7 +77,7 @@ export class Enemy {
         },
         {
           suit: Suit.Diamond,
-          text: "if not damaged, heal X+5HP"
+          text: "If not damaged, heal X+5HP"
         },
         {
           suit: Suit.Heart,

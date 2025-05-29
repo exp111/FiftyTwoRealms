@@ -3,29 +3,38 @@
     current enemy
     battle reward
   </div>
-  <div class="enemy-legend d-flex flex-column" style="width: 40%">
+  <div class="enemy-legend d-flex flex-column gap-1" style="width: 40%">
     <div>
       TODO: Enemies (Ranks)
     </div>
     @for (enemy of enemyTypes; track enemy) {
-      <div>
-        <i [class]="getSuit(enemy.suit)"></i>
-        {{ enemy.name }}
-        <i [class]="getSuit(enemy.suit)"></i>
+      <div class="border">
+        <!-- Title -->
+        <div class="d-flex border p-1">
+          <i [class]="getSuit(enemy.suit)"></i>
+          <span class="flex-grow-1 text-center">
+            {{ enemy.name }}
+          </span>
+          <i [class]="getSuit(enemy.suit)"></i>
+        </div>
         @if (enemy.special) {
-          <div>{{ enemy.special }}</div>
+          <div class="special text-center">
+            {{ enemy.special }}
+          </div>
         }
         <div class="d-flex flex-column">
           @for (ability of enemy.abilities; track ability) {
-            <div class="d-flex flex-row">
+            <div class="d-flex flex-row" style="height: 3rem">
               <!-- Ability Icons -->
-              <div>
+              <div class="border d-flex flex-column justify-content-center p-1">
                 <i [class]="getSuit(ability.suit)"></i>
                 @if (ability.instant) {
                   <i class="instant"></i>
                 }
               </div>
-              {{ ability.text }}
+              <span class="border flex-grow-1 align-content-center p-1">
+                {{ ability.text }}
+              </span>
             </div>
           }
         </div>
