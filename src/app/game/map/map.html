@@ -1,8 +1,8 @@
 <div class="map h-100 border">
   <table class="w-100 h-100">
-    @for (row of map; track row; let x = $index) {
+    @for (row of map; track row; let y = $index) {
       <tr>
-        @for (tile of row; track tile; let y = $index) {
+        @for (tile of row; track tile; let x = $index) {
           @switch (tile) {
             @case (MapTile.EMPTY) {
               <td class="tile empty" [attr.data-x]="x" [attr.data-y]="y"></td>
@@ -13,7 +13,11 @@
             @default {
               @let room = getRoom(tile);
               @if (room) {
-                <td class="tile room {{getRoomType(room)}}" [colSpan]="room.width" [rowSpan]="room.height"></td>
+                <td class="tile room {{getRoomType(room)}}"
+                    [colSpan]="room.width" [rowSpan]="room.height"
+                    [attr.data-x]="x" [attr.data-y]="y">
+                  {{getRoomType(room)}}
+                </td>
               }
             }
           }

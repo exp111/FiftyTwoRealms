@@ -91,6 +91,34 @@ export class Map {
       height: 2
     },
     {
+      type: RoomType.LIBRARY, //TODO: lizard lair
+      x: 6,
+      y: 9,
+      width: 2,
+      height: 2
+    },
+    {
+      type: RoomType.CHALLENGE,
+      x: 0,
+      y: 10,
+      width: 3,
+      height: 3
+    },
+    {
+      type: RoomType.CHALLENGE,
+      x: 10,
+      y: 11,
+      width: 3,
+      height: 3
+    },
+    {
+      type: RoomType.EVENT,
+      x: 0,
+      y: 14,
+      width: 3,
+      height: 3
+    },
+    {
       type: RoomType.START,
       x: 0,
       y: 17,
