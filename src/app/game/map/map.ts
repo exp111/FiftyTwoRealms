@@ -5,6 +5,7 @@ enum RoomType {
   LIBRARY,
   SPRING,
   MERCHANT,
+  EVENT,
   CHALLENGE,
   BOSS
 }
@@ -30,34 +31,69 @@ enum MapTile {
   styleUrl: './map.scss',
 })
 export class Map {
-  width = 12;
+  width = 13;
   height = 20;
   rooms: Room[] = [
     {
       type: RoomType.MERCHANT,
-      x: 1,
-      y: 1,
+      x: 0,
+      y: 0,
       width: 2,
       height: 2
     },
     {
-      type: RoomType.CHALLENGE,
-      x: 5,
-      y: 1,
-      width: 2,
-      height: 2
+      type: RoomType.EVENT,
+      x: 6,
+      y: 0,
+      width: 3,
+      height: 3
     },
     {
       type: RoomType.BOSS,
-      x: 8,
-      y: 1,
+      x: 10,
+      y: 0,
+      width: 3,
+      height: 3
+    },
+    {
+      type: RoomType.CHALLENGE,
+      x: 0,
+      y: 3,
+      width: 3,
+      height: 3
+    },
+    {
+      type: RoomType.EVENT,
+      x: 6,
+      y: 4,
+      width: 3,
+      height: 3
+    },
+    {
+      type: RoomType.LIBRARY, //TODO: Goblin Hoard
+      x: 10,
+      y: 4,
+      width: 2,
+      height: 2
+    },
+    {
+      type: RoomType.SPRING,
+      x: 1,
+      y: 7,
+      width: 2,
+      height: 2
+    },
+    {
+      type: RoomType.SPRING,
+      x: 10,
+      y: 7,
       width: 2,
       height: 2
     },
     {
       type: RoomType.START,
-      x: 1,
-      y: 18,
+      x: 0,
+      y: 17,
       width: 2,
       height: 2
     }
