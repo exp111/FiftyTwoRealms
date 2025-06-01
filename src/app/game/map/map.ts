@@ -5,6 +5,7 @@ enum RoomType {
   LIBRARY,
   SPRING,
   MERCHANT,
+  JAILOR,
   EVENT,
   CHALLENGE,
   BOSS
@@ -32,7 +33,7 @@ enum MapTile {
 })
 export class Map {
   width = 13;
-  height = 20;
+  height = 24;
   rooms: Room[] = [
     {
       type: RoomType.MERCHANT,
@@ -119,9 +120,58 @@ export class Map {
       height: 3
     },
     {
-      type: RoomType.START,
-      x: 0,
+      type: RoomType.SPRING,
+      x: 6,
+      y: 13,
+      width: 2,
+      height: 2
+    },
+    {
+      type: RoomType.LIBRARY,
+      x: 1,
+      y: 18,
+      width: 2,
+      height: 2
+    },
+    {
+      type: RoomType.MERCHANT, //TODO: traveller
+      x: 4,
+      y: 18,
+      width: 2,
+      height: 2
+    },
+    {
+      type: RoomType.CHALLENGE,
+      x: 7,
       y: 17,
+      width: 3,
+      height: 3
+    },
+    {
+      type: RoomType.JAILOR,
+      x: 11,
+      y: 17,
+      width: 2,
+      height: 2
+    },
+    {
+      type: RoomType.START,
+      x: 1,
+      y: 21,
+      width: 2,
+      height: 2
+    },
+    {
+      type: RoomType.EVENT,
+      x: 6,
+      y: 21,
+      width: 3,
+      height: 3
+    },
+    {
+      type: RoomType.LIBRARY, //TODO: loot stash
+      x: 10,
+      y: 22,
       width: 2,
       height: 2
     }
