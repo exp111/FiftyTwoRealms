@@ -4,6 +4,9 @@ enum RoomType {
   START,
   LIBRARY,
   SPRING,
+  MERCHANT,
+  CHALLENGE,
+  BOSS
 }
 
 interface Room {
@@ -12,6 +15,7 @@ interface Room {
   y: number;
   width: number;
   height: number;
+  //TODO: connections?
 }
 
 enum MapTile {
@@ -26,28 +30,49 @@ enum MapTile {
   styleUrl: './map.scss',
 })
 export class Map {
-  width = 20;
+  width = 12;
   height = 20;
   rooms: Room[] = [
     {
-      type: RoomType.START,
-      x: 18,
+      type: RoomType.MERCHANT,
+      x: 1,
       y: 1,
+      width: 2,
+      height: 2
+    },
+    {
+      type: RoomType.CHALLENGE,
+      x: 5,
+      y: 1,
+      width: 2,
+      height: 2
+    },
+    {
+      type: RoomType.BOSS,
+      x: 8,
+      y: 1,
+      width: 2,
+      height: 2
+    },
+    {
+      type: RoomType.START,
+      x: 1,
+      y: 18,
       width: 2,
       height: 2
     }
   ];
 
-  map: (MapTile | Room)[][] = new Array(this.width)
+  map: (MapTile | Room)[][] = new Array(this.height)
     .fill(null)
     .map(() =>
-      new Array(this.height).fill(MapTile.EMPTY)
+      new Array(this.width).fill(MapTile.EMPTY)
     );
 
   constructor() {
     // fill map
     for (let room of this.rooms) {
-      this.map[room.x][room.y] = room;
+      this.map[room.y][room.x] = room;
       // set all other tiles to null
       for (let x = 0; x < room.width; x++) {
         for (let y = 0; y < room.height; y++) {
@@ -55,7 +80,7 @@ export class Map {
           if (x == 0 && y == 0) {
             continue;
           }
-          this.map[room.x + x][room.y + y] = MapTile.NULL;
+          this.map[room.y + y][room.x + x] = MapTile.NULL;
         }
       }
     }
