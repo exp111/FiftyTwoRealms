@@ -1,0 +1,12 @@
+.map {
+  .tile.empty {
+    background-color: #E1D9CC;
+  }
+  .tile.room {
+   border: 1px solid black;
+
+    &:hover {
+      outline: 2px solid black;
+    }
+  }
+}

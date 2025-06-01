@@ -1,3 +1,24 @@
-<div class="h-100 border">
-  map
+<div class="map h-100 border">
+  <table class="w-100 h-100">
+    @for (row of map; track row; let x = $index) {
+      <tr>
+        @for (tile of row; track tile; let y = $index) {
+          @switch (tile) {
+            @case (MapTile.EMPTY) {
+              <td class="tile empty" [attr.data-x]="x" [attr.data-y]="y"></td>
+            }
+            @case (MapTile.NULL) {
+              <!-- empty -->
+            }
+            @default {
+              @let room = getRoom(tile);
+              @if (room) {
+                <td class="tile room {{getRoomType(room)}}" [colSpan]="room.width" [rowSpan]="room.height"></td>
+              }
+            }
+          }
+        }
+      </tr>
+    }
+  </table>
 </div>
